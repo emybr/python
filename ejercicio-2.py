@@ -1,3 +1,9 @@
+from enum import Enum
+
+class TipoAnimal(Enum):
+    VERTEBRADO = "vertebrado"
+    INVERTEBRADO = "invertebrado"
+
 class Animal:
     def __init__(self, cantidad_patas, tipo):
         self.cantidad_patas = cantidad_patas
@@ -22,29 +28,28 @@ class Aguila(Animal):
         return "Estoy volando"
 
 
-animal = Animal(cantidad_patas=4, tipo="vertebrado")
+
+animal = Animal(cantidad_patas=4, tipo=TipoAnimal.VERTEBRADO)
 
 
-perro = Perro(cantidad_patas=4, tipo="vertebrado", nombre="Firulais", raza="Labrador")
+perro = Perro(cantidad_patas=4, tipo=TipoAnimal.VERTEBRADO, nombre="Firulais", raza="Labrador")
 
 
-aguila = Aguila(cantidad_patas=2, tipo="vertebrado", )
-
+aguila = Aguila(cantidad_patas=2, tipo=TipoAnimal.VERTEBRADO)
 
 print("Atributos del animal:")
 print("Cantidad de patas:", animal.cantidad_patas)
-print("Tipo:", animal.tipo)
+print("Tipo:", animal.tipo.value)
 
 print("\nAtributos del perro:")
 print("Cantidad de patas:", perro.cantidad_patas)
-print("Tipo:", perro.tipo)
+print("Tipo:", perro.tipo.value)
 print("Nombre:", perro.nombre)
 print("Raza:", perro.raza)
 
 print("\nAtributos del águila:")
 print("Cantidad de patas:", aguila.cantidad_patas)
-print("Tipo:", aguila.tipo)
-
+print("Tipo:", aguila.tipo.value)
 
 print("\nComportamiento del animal:")
 print(animal.comer())
