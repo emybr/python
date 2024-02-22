@@ -1,11 +1,8 @@
-
 def accion_A(a, b):
     return a + b
 
-
 def accion_B(a, b):
     return a * b
-
 
 def main():
     while True:
